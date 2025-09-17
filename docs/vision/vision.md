@@ -46,8 +46,6 @@ Para resolver isso, a proposta é criar um aplicativo que unifique to-do list e 
 
 ## 6. Requisitos funcionais
 
-#### <span style="color: blue; font-size: 20px">#</span> [REGRAS DE NEGÓGIO](../regras/regras-de-negocio.md)
-
 | Código | Nome                      | Descrição                                                                                             | Regra de negócio                                                                           |
 | ------ | ------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | RF01   | Cadastro/Login de Usuário | O sistema deve permitir que o usuário crie uma conta ou faça login para acessar suas notas e tarefas. | O login pode ser feito por e-mail/senha ou integração com contas externas (Google, Apple). |
@@ -64,5 +62,3 @@ Para resolver isso, a proposta é criar um aplicativo que unifique to-do list e 
 | RF12   | Sincronização de Dados    | Todas as notas e tarefas devem ser sincronizadas entre web e mobile.                                  | A sincronização deve ocorrer em tempo real ou no próximo acesso à internet.                |
 | RF13   | Pesquisa                  | O usuário poderá pesquisar notas e tarefas por palavra-chave.                                         | A busca deve considerar título e conteúdo.                                                 |
 | RF14   | Subtarefas                | O sistema deve permitir que o usuário crie subtarefas dentro de uma tarefa.                           | Subtarefas devem herdar prazo da tarefa principal, se não tiverem um próprio.              |
-
-## 9. Requisitos não-funcionais
