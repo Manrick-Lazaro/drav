@@ -19,6 +19,20 @@
   - [CDU 02 - Fluxo alternativo 03 – Excluir Nota](#cdu-02---fluxo-alternativo-03--excluir-nota)
   - [CDU 02 - Fluxo alternativo 04 – Organizar Notas (Etiquetas/Categorias)](#cdu-02---fluxo-alternativo-04--organizar-notas-etiquetascategorias)
   - [CDU 02 - Fluxo alternativo 05 – Fixar Nota](#cdu-02---fluxo-alternativo-05--fixar-nota)
+- [CDU 03 - Gerenciar Tarefa](#cdu-03---gerenciar-tarefa)
+  - [CDU 03 - Fluxo Principal](#cdu-03---fluxo-principal)
+  - [CDU 02 - Fluxo alternativo 01 - criar tarefa](#cdu-03---fluxo-alternativo-01---criar-tarefa)
+  - [CDU 02 - Fluxo alternativo 02 - editar tarefa](#cdu-03---fluxo-alternativo-02---editar-tarefa)
+  - [CDU 02 - Fluxo alternativo 03 - excluir tarefa](#cdu-03---fluxo-alternativo-03---excluir-tarefa)
+  - [CDU 02 - Fluxo alternativo 04 - concluir tarefa](#cdu-03---fluxo-alternativo-04---concluir-tarefa)
+  - [CDU 02 - Fluxo alternativo 05 - definir prazo e notificacao](#cdu-03---fluxo-alternativo-05---definir-prazo-e-notificação)
+  - [CDU 02 - Fluxo alternativo 06 - subtarefas](#cdu-03---fluxo-alternativo-06---subtarefas)
+  - [CDU 02 - Fluxo alternativo 07 - organizar tarefa](#cdu-03---fluxo-alternativo-07---organizar-tarefa)
+- [CDU 04 - Persquisar Notas/Tarefas](#cdu-04---persquisar-notastarefas)
+  - [CDU 04 - Fluxo Principal](#cdu-04---fluxo-principal)
+  - [CDU 04 - Fluxo alternativo 01 - Filtros Avançados](#cdu-04---fluxo-alternativo-01---filtros-avançados)
+  - [CDU 04 - Fluxo alternativo 02 - Nenhum Resultado Encontrado](#cdu-04---fluxo-alternativo-02---nenhum-resultado-encontrado)
+  - [CDU 04 - Fluxo alternativo 03 - Sugestões Automáticas](#cdu-04---fluxo-alternativo-03---sugestões-automáticas)
 
 ### CDU 01 - Registro / Login
 
@@ -121,3 +135,124 @@
 | ------------------------------- | ------------------------------------- |
 | seleciona a opção “Fixar nota”. |                                       |
 |                                 | exibe a nota fixada no topo da lista. |
+
+### CDU 03 - Gerenciar Tarefa
+
+- **Código:** CDU 03
+- **Nome:** Gerenciar Tarefa
+- **Ator:** usuário
+- **Pré-condição** O usuário deve estar autenticado no sistema.
+- **Pós-condição** As notas ficam armazenadas, atualizadas ou removidas conforme a ação executada.### CDU 02 - Gerenciar Nota
+
+- **Código:** CDU 02
+- **Nome:** Gerenciar Nota
+- **Ator:** usuário
+- **Pré-condição** O usuário deve estar autenticado no sistema.
+- **Pós-condição** As tarefas ficam armazenadas, atualizadas, concluídas ou removidas conforme a ação executada.
+
+#### CDU 03 - Fluxo principal
+
+| Usuário                                                                                                           | Sistema                                                                                  |
+| ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| acessa a seção Tarefas.                                                                                           |                                                                                          |
+|                                                                                                                   | exibe todas as tarefas do usuário (ativas, concluídas, organizadas por lista/categoria). |
+| O usuário pode: Criar nova tarefa, Visualizar tarefas existentes, Editar tarefa, Excluir tarefa, Concluir tarefa. |                                                                                          |
+|                                                                                                                   | executa a operação escolhida e atualiza a exibição.                                      |
+
+#### CDU 03 - Fluxo alternativo 01 - criar tarefa
+
+| Usuário                                                        | Sistema                          |
+| -------------------------------------------------------------- | -------------------------------- |
+| seleciona “Nova Tarefa”.                                       |                                  |
+|                                                                | exibe um campo de edição.        |
+| insere título, descrição (opcional) e define prazo (opcional). |                                  |
+|                                                                | salva a tarefa e exibe na lista. |
+
+#### CDU 03 - Fluxo alternativo 02 - editar tarefa
+
+| Usuário                                       | Sistema                     |
+| --------------------------------------------- | --------------------------- |
+| seleciona uma tarefa existente.               |                             |
+|                                               | abre os detalhes da tarefa. |
+| altera título, descrição, prazo ou etiquetas. |                             |
+|                                               | salva as alterações.        |
+
+#### CDU 03 - Fluxo alternativo 03 - excluir tarefa
+
+| Usuário                            | Sistema                             |
+| ---------------------------------- | ----------------------------------- |
+| seleciona “Excluir” em uma tarefa. |                                     |
+|                                    | pede confirmação.                   |
+| confirma.                          |                                     |
+|                                    | remove a tarefa e atualiza a lista. |
+
+#### CDU 03 - Fluxo alternativo 04 - concluir tarefa
+
+| Usuário                        | Sistema                                      |
+| ------------------------------ | -------------------------------------------- |
+| marca a tarefa como concluída. |                                              |
+|                                | move a tarefa para a seção de concluídas.    |
+|                                | O sistema registra o histórico de conclusão. |
+
+#### CDU 03 - Fluxo alternativo 05 - definir prazo e notificação
+
+| Usuário                                             | Sistema                                   |
+| --------------------------------------------------- | ----------------------------------------- |
+| adiciona data e/ou horário de vencimento na tarefa. |                                           |
+|                                                     | salva a informação.                       |
+|                                                     | agenda notificação para o prazo definido. |
+
+#### CDU 03 - Fluxo alternativo 06 - subtarefas
+
+| Usuário                                         | Sistema                                                           |
+| ----------------------------------------------- | ----------------------------------------------------------------- |
+| adiciona subtarefas dentro de uma tarefa maior. |                                                                   |
+|                                                 | exibe a lista de subtarefas vinculadas.                           |
+|                                                 | Cada subtarefa pode ser marcada como concluída independentemente. |
+
+#### CDU 03 - Fluxo alternativo 07 - organizar tarefa
+
+| Usuário                                                     | Sistema                                    |
+| ----------------------------------------------------------- | ------------------------------------------ |
+| adiciona etiquetas ou move a tarefa para uma lista/projeto. |                                            |
+|                                                             | salva a organização e atualiza a exibição. |
+
+### CDU 04 - Persquisar Notas/Tarefas
+
+- **Código:** CDU 04
+- **Nome:** Persquisar Notas/Tarefas
+- **Ator:** usuário
+- **Pré-condição** O usuário deve ter acesso à aplicação (web ou mobile).
+- **Pós-condição** O sistema exibe resultados de notas e/ou tarefas de acordo com os critérios de busca.Usuário autenticado e com sessão ativa no sistema.
+
+#### CDU 04 - Fluxo principal
+
+| Usuário                                                                | Sistema                                                                  |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| acessa o campo de Pesquisa no app.                                     |                                                                          |
+|                                                                        | disponibiliza opções de filtro (ex.: buscar em notas, tarefas ou ambos). |
+| digita uma palavra-chave ou parte do conteúdo.                         |                                                                          |
+|                                                                        | consulta o banco de dados.                                               |
+|                                                                        | exibe uma lista de resultados correspondentes.                           |
+| seleciona um resultado e é redirecionado para a nota/tarefa escolhida. |                                                                          |
+
+#### CDU 04 - Fluxo alternativo 01 - Filtros Avançados
+
+| Usuário                                                                           | Sistema                                                   |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| aplica filtros adicionais (ex.: por etiqueta, categoria, data, status da tarefa). |                                                           |
+|                                                                                   | retorna os resultados de acordo com os filtros aplicados. |
+
+#### CDU 04 - Fluxo alternativo 02 - Nenhum Resultado Encontrado
+
+| Usuário                                                             | Sistema                                            |
+| ------------------------------------------------------------------- | -------------------------------------------------- |
+| informa que não foram encontradas notas ou tarefas correspondentes. |                                                    |
+|                                                                     | sugere remover filtros ou revisar a palavra-chave. |
+
+#### CDU 04 - Fluxo alternativo 03 - Sugestões Automáticas
+
+| Usuário                                                                               | Sistema                                   |
+| ------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Enquanto o usuário digita no campo de busca, o sistema exibe sugestões em tempo real. |                                           |
+|                                                                                       | pode selecionar uma sugestão diretamente. |
