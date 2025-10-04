@@ -1,6 +1,7 @@
 package com.drav.drav.models;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.data.annotation.CreatedDate;
 
@@ -12,6 +13,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -59,4 +61,7 @@ public class User {
     @Email(message = "E-mail inválido")
     @Column(name = "email", unique = true, nullable = false)
     private String email;
+
+    @OneToMany(mappedBy = "user")
+    private List<Note> notes;
 }
