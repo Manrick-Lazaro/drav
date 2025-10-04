@@ -64,4 +64,7 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Note> notes;
+    
+    @OneToMany(mappedBy = "user")
+    private List<Label> labels;
 }
