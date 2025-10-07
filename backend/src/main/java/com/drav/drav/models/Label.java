@@ -50,4 +50,7 @@ public class Label {
 
     @ManyToMany(mappedBy = "labels")
     private Set<Note> notes;
+
+    @ManyToMany(mappedBy = "labels")
+    private Set<Task> tasks;
 }
